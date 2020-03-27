@@ -5,12 +5,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class enviar extends JFrame {
 
     JLabel lblCorreo, lblContra, lblPara;
-    JTextField txtCorreo, txtContra, txtPara;
+    JTextField txtCorreo, txtPara;
+    JPasswordField txtContra;
     JButton aceptar, cancelar;
     
     String correo, contra, para;
@@ -35,7 +37,8 @@ public class enviar extends JFrame {
         txtCorreo.setBounds(90, 10, 190, 30);
         add(txtCorreo);
 
-        txtContra = new JTextField();
+        txtContra = new JPasswordField();
+        txtContra.setEchoChar('*');
         txtContra.setBounds(90, 40, 190, 30);
         add(txtContra);
 
