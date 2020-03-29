@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class enviar extends JFrame {
+public class enviar extends JFrame { //Esta clase es la que nos va a ayudar a obtener los tados del usuario que quiere enviar mail
 
     JLabel lblCorreo, lblContra, lblPara;
     JTextField txtCorreo, txtPara;
@@ -17,7 +17,7 @@ public class enviar extends JFrame {
     
     String correo, contra, para;
 
-    enviar(String mensaje) {
+    enviar(String mensaje) { //Lo que hace el constructor es simplemente pintar la interfaz que obtiene los datos del usuario que va a enviar el mail
         setLayout(null);
         setBounds(100, 50, 315, 200);
 
@@ -48,7 +48,7 @@ public class enviar extends JFrame {
 
         aceptar = new JButton("Aceptar");
         aceptar.setBounds(90, 120, 75, 25);
-        aceptar.addActionListener(new ActionListener() {
+        aceptar.addActionListener(new ActionListener() { //Al darle aceptar, obtiene los datos de los textos y los pone en las variables correspondientes
             public void actionPerformed(ActionEvent e) {
                 if(txtCorreo.getText().equals("") || txtContra.getText().equals("") || txtPara.getText().equals("")){
                     JOptionPane.showMessageDialog(null, "Ingresa los datos correspondientes en los espacios");
@@ -68,7 +68,7 @@ public class enviar extends JFrame {
 
         cancelar = new JButton("Cancelar");
         cancelar.setBounds(175, 120, 85, 25);
-        cancelar.addActionListener(new ActionListener() {
+        cancelar.addActionListener(new ActionListener() { //Si le damos click a cancelar simplemente se cierra la interfaz
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
             }
@@ -79,7 +79,7 @@ public class enviar extends JFrame {
     }
     
     
-    
+    //estos metodos son simplemente para obtener los valores de las variables
     public String getCorreo(){
         return correo;
     }
