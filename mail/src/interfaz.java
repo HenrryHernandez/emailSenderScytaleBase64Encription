@@ -126,6 +126,7 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_rbMandarEncriptadoActionPerformed
 
     private void btnEncriptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncriptarActionPerformed
+        //Este boton hace las llamadas correspondientes a las clases y metodos para encriptar
         if (txtMensaje.equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese texto a Desencriptar");
         } else {
@@ -137,6 +138,7 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEncriptarActionPerformed
 
     private void btnDesencriptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesencriptarActionPerformed
+        //Este boton hace las llamadas correspondientes a las clases y metodos para desencriptar
         if (txtMensaje.equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese texto a Desencriptar");
         } else {
@@ -148,9 +150,9 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDesencriptarActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        if (!rbMandarEncriptado.isSelected()) {
+        if (!rbMandarEncriptado.isSelected()) { //Si el checkbox NO esta selccionado se envia todo sin encriptar
             new enviar(txtMensaje.getText()).setVisible(true);
-        } else {
+        } else { //Si el checkbox ESTA selccionado se envia todo encriptado
             String palabra;
             int columnas = Integer.parseInt(JOptionPane.showInputDialog("Inserte la cantidad de columnas para encriptar con Scytale"));
             palabra = new scytale(txtMensaje.getText(), columnas).getPalabraEncriptada();
